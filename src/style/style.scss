@@ -1,0 +1,229 @@
+@import 'reset';
+@font-face {
+    font-family: 'ProximaNova';
+    src: url(../fonts/ProximaNova-Regular.otf);
+}
+@font-face {
+    font-family: 'ProximaNova_Bold';
+    src: url(../fonts/ProximaNova-Bold.otf);
+}
+@font-face {
+    font-family: 'ProximaNova_Light';
+    src: url(../fonts/ProximaNova-Light.otf);
+}
+* {
+    font-family: 'ProximaNova_Light';
+}
+h2 {
+    font-family: 'ProximaNova_Bold';
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-block: 1rem;
+}
+p {
+    line-height: 1.75rem;
+    color:hsl(125, 0%, 25%);
+    font-size: 0.9rem;
+}
+header {
+    height:80px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:2rem;
+    nav {
+        display: flex;
+        align-items: center;
+        a {
+            font-size: 2rem;
+        }
+        a:first-child {
+            display: flex;
+            align-items: center;
+            margin-right: 2rem;
+            background-color: black;
+            padding: 1rem;
+            border-radius: 2rem;
+            img {
+                height: 1rem;
+                width: 1rem;
+                filter: invert(1);
+            }
+        }
+    }
+    .hamburger, .hamburger:visited {
+        color:black;
+    }
+}
+
+.article--image {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding-block: 6rem;
+    background-size: cover;
+    background-position: center;
+    &:nth-of-type(1) {
+        background-image: url('../images/1500x1250_01.jpg');
+    }
+    .first {
+        background-color: white;
+        position:relative;
+        &::after {
+            content: '';
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 1.25rem;
+            background-image: url('../images/svg/fleche-droite.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: white;
+            filter: invert(100%);
+
+            position: absolute;
+            bottom:0;
+            left:50%;
+            transform: translate(-50%, 50%);
+        }
+    }
+    &:nth-of-type(2) {
+        background-image: url('../images/1500x1250_02.jpg');
+    }
+    .second {
+        background-color: black;
+        color:white;
+        position:relative;
+        &::after {
+            content: '';
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 1.25rem;
+            background-image: url('../images/svg/fleche-droite.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: white;
+
+            position: absolute;
+            bottom:0;
+            left:50%;
+            transform: translate(-50%, 50%);
+        }
+    }
+}
+.article--black {
+    background-color: black;
+    padding-block: 2rem;
+    p {
+        color:white;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    strong {
+        font-weight: bold;
+    }
+}
+.article--big {
+    & section:first-child {
+        padding-block: 15rem;
+        background-size: cover;
+        background-position: center;
+    }
+    .first {
+        background-image: url('../images/1000x1600_01.jpg');
+        
+    }
+    .second {
+        background-image: url('../images/1850x1200_01.jpg');
+    }
+}
+.article--grey {
+    box-shadow: inset 50vw 0px 0px hsla(125, 0%, 0%, .05);
+    position:relative;
+    padding: 2rem;
+}
+a {
+    display:inline-block;
+    color: black;
+    text-decoration: none;
+    padding:1rem 1rem 1rem 0;
+    font-weight: bold;
+    font-family: 'ProximaNova_Bold';
+}
+.aligned {
+    padding: 2rem;
+}
+.arrow {
+    padding-left: 1rem;
+    content: url('../images/svg/Group\ 1300.svg');
+}
+
+
+.footer {
+    position: relative;
+    font-family: 'ProximaNova';
+    &::before {
+        content:'';
+        position:absolute;
+        width:80%;
+        height:2px;
+        left:50%;
+        transform: translateX(-50%);
+        background-color: hsla(125, 0%, 0%, .125);
+        top:0;
+        
+    }
+    h2 {
+        padding-bottom: 0px;
+    }
+    &__infosList {
+        & li {
+            list-style-position: inside;
+            padding-block:.5rem;
+        }
+        & li:nth-child(1) {
+            list-style-image: url('../images/svg/marker-road.svg');
+        }
+        & li:nth-child(2) {
+            list-style-image: url('../images/svg/icon-arrobas.svg');
+        }
+        & li:nth-child(3) {
+            list-style-image: url('../images/svg/phone-2.svg');
+        }
+    }
+    section {
+        margin-block: 2rem;
+        padding:2rem;
+        background-color: black;
+        color:white;
+        h3 {
+            padding-bottom: 1rem;
+        }
+        p {
+            color: white;
+            font-family: 'ProximaNova_Light';
+        }
+    }
+    nav {
+        display:flex;
+        justify-content: center;
+        a {
+            margin:0;
+            padding:0;
+            & + a {
+                margin-left: 1rem;
+            }
+        }
+        figure {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            box-shadow: 0px 0px 0px 2px hsla(125, 0%, 0%, .25);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                height:40%;
+            }
+        }
+    }
+}
